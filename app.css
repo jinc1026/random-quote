@@ -1,0 +1,46 @@
+body{
+  background-color: black;
+}
+
+.container {
+  min-height: 100px;
+  overflow: hidden;
+  background-color: black;
+  width: 600px;   
+  margin: 0 auto;
+  margin-top: 5%;
+  padding-bottom: 15px;
+}
+
+footer {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+
+#quote {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 26px;
+  color: white;
+}
+
+#person {
+  text-align: right;
+  font-family: Georgia, serif;
+  margin-right: 10%;
+  padding-bottom: 15px;
+  font-size: 18px;
+  color: white;
+}
+
+.btn {
+ float: right;
+ margin-top: 0px;
+}
+
+#twtbtn {
+  margin-top: 0px;
+}
