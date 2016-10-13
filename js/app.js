@@ -1,4 +1,4 @@
-var quotes = ["The best preparation for tomorrow is doing your best today", "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible", "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart." , "What we think, we become", "Happiness is not something you postpone for the future; it is something you design for the present."];
+var quotes = ["The best preparation for tomorrow is doing your best today", "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible", "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart" , "What we think, we become", "Happiness is not something you postpone for the future; it is something you design for the present"];
 var by = ["H. Jackson Brown Jr.", "Francis of Assisi", "Helen Keller" , "Buddha", "Jim Rohn"];
 
 function getQuote(){
@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 twttr.ready(function (twttr) {
         twttr.widgets.createShareButton(
-            'http://sokfm.gr',
+            'http://codepen.io/jinc1026/pen/KgWagK',
             document.getElementById('twtbtn'),
             function (el) {
                 console.log("Button created.")
@@ -48,9 +48,9 @@ twttr.ready(function (twttr) {
                 dnt: 'false',
                 lang: 'el',
                 related: 'related',
-                text: quotes[quoteNum],
-                via: 'accountname',
-                hashtags: 'hashtag'
+                text: quotes[quoteNum] + ' - ' + by[quoteNum],
+                via: 'Jin_Choe',
+                hashtags: 'quote'
             }
         );
 
@@ -66,6 +66,22 @@ twttr.ready(function (twttr) {
     
     $('#quote').text("\"" + quotes[quoteNum] +"\"");
     $("#person").text("By " + by[quoteNum]);
+    
+    // Remove existing iframe
+    $('#twtbtn iframe').remove();
+    // Generate new markup
+    var tweetBtn = $('<a></a>')
+        .addClass('twitter-share-button')
+        .attr('href', 'http://twitter.com/share')
+        .attr('data-size', 'large')
+        .attr('data-url', 'http://codepen.io/anon/pen/NRBKga')
+        .attr('data-text', quotes[quoteNum] + ' - ' + by[quoteNum]);
+    $('#twtbtn').append(tweetBtn);
+    twttr.widgets.load();
+
+    
+    
+    
   });
 
 
